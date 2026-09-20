@@ -6,12 +6,14 @@
 /*   By: ilkaptan <ilkaptan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 11:58:10 by ilkaptan          #+#    #+#             */
-/*   Updated: 2026/09/19 11:58:20 by ilkaptan         ###   ########.fr       */
+/*   Updated: 2026/09/20 17:34:57 by ilkaptan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
+
+# include "../../push_swap.h"
 
 typedef struct s_node
 {

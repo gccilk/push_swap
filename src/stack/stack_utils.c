@@ -6,12 +6,11 @@
 /*   By: ilkaptan <ilkaptan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 11:58:48 by ilkaptan          #+#    #+#             */
-/*   Updated: 2026/09/19 11:58:53 by ilkaptan         ###   ########.fr       */
+/*   Updated: 2026/09/20 17:37:45 by ilkaptan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
-#include <stdlib.h>
 
 int	stack_is_empty(t_stack *stack)
 {

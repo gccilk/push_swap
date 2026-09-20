@@ -6,49 +6,65 @@
 /*   By: ilkaptan <ilkaptan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 13:33:05 by ilkaptan          #+#    #+#             */
-/*   Updated: 2026/09/19 13:33:10 by ilkaptan         ###   ########.fr       */
+/*   Updated: 2026/09/20 17:21:47 by ilkaptan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-/*
-** Pop the top node from 'src' stack and push it to the top of 'dst' stack.
-** Handles all edge cases for circular doubly linked list (size == 1, empty stack, etc.)
-*/
+static t_node	*detach_top(t_stack *stack)
+{
+	t_node	*node;
+
+	if (!stack || stack->size == 0)
+		return (NULL);
+	node = stack->top;
+	if (stack->size == 1)
+		stack->top = NULL;
+	else
+	{
+		stack->top = node->next;
+		node->prev->next = node->next;
+		node->next->prev = node->prev;
+	}
+	stack->size--;
+	node->next = node;
+	node->prev = node;
+	return (node);
+}
+
+static void	attach_top(t_stack *stack, t_node *node)
+{
+	t_node	*last;
+
+	if (!stack || !node)
+		return ;
+	if (stack->size == 0)
+	{
+		stack->top = node;
+		node->next = node;
+		node->prev = node;
+	}
+	else
+	{
+		last = stack->top->prev;
+		node->next = stack->top;
+		node->prev = last;
+		last->next = node;
+		stack->top->prev = node;
+		stack->top = node;
+	}
+	stack->size++;
+}
+
 static void	push_stack(t_stack *src, t_stack *dst)
 {
-	t_node	*pushed_node;
-	t_node	*dst_last;
+	t_node	*node;
 
-	if (!src || src->size == 0)
+	node = detach_top(src);
+	if (!node)
 		return ;
-	pushed_node = src->top;
-	if (src->size == 1)
-		src->top = NULL;
-	else
-	{
-		src->top = pushed_node->next;
-		pushed_node->prev->next = pushed_node->next;
-		pushed_node->next->prev = pushed_node->prev;
-	}
-	src->size--;
-	if (dst->size == 0)
-	{
-		dst->top = pushed_node;
-		pushed_node->next = pushed_node;
-		pushed_node->prev = pushed_node;
-	}
-	else
-	{
-		dst_last = dst->top->prev;
-		pushed_node->next = dst->top;
-		pushed_node->prev = dst_last;
-		dst->top->prev = pushed_node;
-		dst_last->next = pushed_node;
-		dst->top = pushed_node;
-	}
-	dst->size++;
+	attach_top(dst, node);
 }
 
 void	pa(t_data *data)

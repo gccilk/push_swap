@@ -6,15 +6,14 @@
 /*   By: ilkaptan <ilkaptan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 14:19:20 by ilkaptan          #+#    #+#             */
-/*   Updated: 2026/09/19 15:46:55 by ilkaptan         ###   ########.fr       */
+/*   Updated: 2026/09/20 17:34:12 by ilkaptan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ALGORITHMS_H
 # define ALGORITHMS_H
 
-# include "../operations/operations.h"
-# include "../utils/utils.h"
+# include "../../push_swap.h"
 
 /* Strategy execution prototypes */
 void	run_simple(t_data *data);

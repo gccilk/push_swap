@@ -6,16 +6,14 @@
 /*   By: ilkaptan <ilkaptan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 12:50:04 by ilkaptan          #+#    #+#             */
-/*   Updated: 2026/09/19 13:44:40 by ilkaptan         ###   ########.fr       */
+/*   Updated: 2026/09/20 17:34:31 by ilkaptan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPERATIONS_H
 # define OPERATIONS_H
 
-# include <stddef.h>
-# include <unistd.h>
-# include "../stack/stack.h"
+# include "../../push_swap.h"
 
 typedef enum e_output_mode
 {

@@ -6,12 +6,11 @@
 /*   By: ilkaptan <ilkaptan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 11:58:27 by ilkaptan          #+#    #+#             */
-/*   Updated: 2026/09/19 11:58:33 by ilkaptan         ###   ########.fr       */
+/*   Updated: 2026/09/20 17:37:41 by ilkaptan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
-#include <stdlib.h>
 
 t_node	*stack_new_node(int value)
 {
